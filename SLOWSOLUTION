@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int no,val,ans;
+        cin>>no>>val>>ans;
+        long long int div = ans/val;
+        long long int s = 0;
+        if(val*no<=ans)
+        {
+            for(int i=0;i<no;i++)
+            {
+                s = s + val*val;
+            }
+        }
+        else if(ans % val==0)
+        {
+            for(int i=0;i<div;i++)
+            {
+                s = s + val*val;
+            }
+        }
+        else
+        {
+            for(int i=0;i<div;i++)
+            {
+                s = s + val*val;
+            }
+            int rem = ans%val;
+            s = s + rem*rem;
+        }
+        cout<<s<<endl;
+        
+    }
+    return 0;
+}
